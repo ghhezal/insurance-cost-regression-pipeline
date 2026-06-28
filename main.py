@@ -33,9 +33,6 @@ test_r2 = r2_score(y_test, test_pred)
 train_mse = mean_squared_error(y_train, train_pred)
 test_mse = mean_squared_error(y_test, test_pred)
 
-print(f"Train R²: {train_r2:.4f} | Test R²: {test_r2:.4f}")
-print(f"Train MSE: {train_mse:.4f} | Test MSE: {test_mse:.4f}")
-
 # ── Custom Normal Equation Model ──────────────────────────────────────
 custom_model = LinearRegressionNormal()
 custom_model.fit(X_train, y_train)
@@ -51,12 +48,12 @@ print(f"Custom   → Train R²: {train_r2_custom:.4f} | Test R²: {test_r2_custo
 
 # ── Diagnostic Plots ──────────────────────────────────────────────────
 plot_df = pd.DataFrame({
-    'predictions': train_pred,
+    'predictions': train_pred_custom,
     'actual': y_train,
     'is_smoker': X_train['is_smoker'],
     'age': X_train['age'],
     'bmi': X_train['bmi'],
-    'residuals': y_train - train_pred,
+    'residuals': y_train - train_pred_custom,
 })
 
 plt.figure(figsize=(10, 6))
