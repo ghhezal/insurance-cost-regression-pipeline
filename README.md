@@ -73,3 +73,7 @@ python main.py
 ## Stack
 
 Python, NumPy, Pandas, Matplotlib, Seaborn, scikit-learn (for train/test split and baseline comparison only)
+
+## Author
+
+**Amine Ghezal**
